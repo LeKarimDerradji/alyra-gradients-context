@@ -1,6 +1,5 @@
 import Gradient from "./Gradient"
-import { gradients } from "../gradients"
-import { useContext } from "react"
+import { useContext, useReducer, useEffect } from "react"
 import { FilterContext } from "./../context/FilterContext"
 import {reducer} from "./../reducer/reducer"
 
@@ -17,9 +16,13 @@ const GradientsList = () => {
     hasNext: null,
   }
 
-  const [state, dispatch] = useReducer(reducer, initialState)
 
-  
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const { gradientList, loading, error, page, hasNext, tags} = state;
+
+
+
+
 
   useEffect(() => {
     dispatch({ type: "FETCH_INIT" });
@@ -38,11 +41,14 @@ const GradientsList = () => {
       .catch((error) => {
         dispatch({ type: "FETCH_FAILURE", payload: error.message });
       });
-  }, [filter]);
+  }, []);
 
 
 
-  const list = gradients.filter((el) => {
+
+  console.log(gradientList)
+
+  const list = gradientList.filter((el) => {
     if (filter === "all") {
       return true
     }
@@ -51,14 +57,14 @@ const GradientsList = () => {
   return (
     <ul className="row list-unstyled">
       {list.map((el) => {
-        const { name, start, end, tags = [] } = el
+        const { name, start, end, tags, id = [] } = el
         return (
           <Gradient
-            key={name}
             colorStart={start}
             colorEnd={end}
             name={name}
             tags={tags}
+            key={id}
           />
         )
       })}

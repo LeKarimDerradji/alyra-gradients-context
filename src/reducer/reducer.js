@@ -1,6 +1,5 @@
-const {useReducer} = React;
-
 export const reducer = (state, action) => {
+
     switch (action.type) {
       case "FETCH_INIT":
         return {
@@ -11,8 +10,7 @@ export const reducer = (state, action) => {
         return {
           ...state,
           loading: false,
-          hasNext: !!action.payload.next,
-          planets: [...state.planets, ...action.payload.results],
+          gradientList: action.payload,
         }
       case "FETCH_FAILURE":
         return {
