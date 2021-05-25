@@ -151,6 +151,7 @@ export const gradients = [
   },
 ]
 
+
 function allTags(list) {
   /* retourner la liste des tags uniques */
   let listTotal = []
@@ -170,3 +171,4 @@ function allTags(list) {
 }
 
 export const uniqueTags = allTags(gradients)
+
