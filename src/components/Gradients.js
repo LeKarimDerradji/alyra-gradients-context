@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import GradientsList from "./GradientsList"
 import GradientsSelect from "./GradientsSelect"
 
 const Gradients = () => {
-  const [filter, setFilter] = useState("all")
 
   useEffect(() => {
     fetch("https://gradients-api.herokuapp.com/gradients")
@@ -24,8 +23,8 @@ const Gradients = () => {
 
   return (
     <>
-      <GradientsSelect filter={filter} setFilter={setFilter} />
-      <GradientsList filter={filter} setFilter={setFilter} />
+      <GradientsSelect/>
+      <GradientsList />
     </>
   )
 }

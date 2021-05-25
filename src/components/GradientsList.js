@@ -1,8 +1,13 @@
 import Gradient from "./Gradient"
 import { gradients } from "../gradients"
+import { useContext } from "react"
+import { FilterContext } from "./../context/FilterContext"
 
-const GradientsList = (props) => {
-  const { filter, setFilter } = props
+const GradientsList = () => {
+  // Fetch la data, transformer la donnée en tableau et la passée dans le return. 
+  // Transformer filter / setFilter en useContext. 
+  const { filter } = useContext(FilterContext)
+
   const list = gradients.filter((el) => {
     if (filter === "all") {
       return true
@@ -20,8 +25,6 @@ const GradientsList = (props) => {
             colorEnd={end}
             name={name}
             tags={tags}
-            filter={filter}
-            setFilter={setFilter}
           />
         )
       })}
