@@ -5,7 +5,7 @@ import { ReactComponent as Prev } from "bootstrap-icons/icons/arrow-left.svg"
 import {GradientContext} from './../context/GradientContext'
 
 const GradientsHeader = ({ children }) => {
-  const {gradientList, loading } = useContext(GradientContext)
+  const {gradientList} = useContext(GradientContext)
   const list = gradientList
   const length = list.length
 
@@ -25,12 +25,13 @@ const GradientsHeader = ({ children }) => {
   
 
   
- const style = {
-    backgroundImage: `linear-gradient(to right, ${loading ? 'rgb(0,0,0)' : list[randomGradient]}, ${loading ? 'rgb(0,0,0)' : list[randomGradient]})`
+  const style = {
+    backgroundImage: `linear-gradient(to right, ${list[randomGradient]?.start}, ${list[randomGradient]?.end})`
   }
+
   return (
     <>
-    <header className="text-center bg-dark text-white py-5 mb-5" style={style}>
+    <header className="text-center bg-dark text-white py-5 mb-5" style={list.length > 0 ? style : {backgroundColor: 'black'}}>
       {children}
       <button
         aria-label="Clicker pour afficher le dégradé précédant"

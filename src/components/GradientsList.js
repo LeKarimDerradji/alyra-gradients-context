@@ -3,10 +3,9 @@ import { useContext } from "react"
 import { GradientContext } from "./../context/GradientContext"
 
 
-const GradientsList = ({ }) => {
+const GradientsList = () => {
   
-  const { filter, gradientList, loading} = useContext(GradientContext)
-
+  const { filter, gradientList} = useContext(GradientContext)
 
   const list = gradientList.filter((el) => {
     if (filter === "all") {
@@ -30,7 +29,7 @@ const GradientsList = ({ }) => {
         )
       })}
     </ul>
-    {loading && <p className="text-center">loading...</p>}
+    
     </>
   )
 }
