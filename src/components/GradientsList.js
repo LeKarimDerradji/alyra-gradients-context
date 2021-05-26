@@ -1,12 +1,11 @@
 import Gradient from "./Gradient"
 import { useContext } from "react"
-import { FilterContext } from "./../context/FilterContext"
+import { GradientContext } from "./../context/GradientContext"
 
 
-const GradientsList = ({gradientList, loading}) => {
-  // Fetch la data, transformer la donnée en tableau et la passée dans le return. 
-  // Transformer filter / setFilter en useContext. 
-  const { filter } = useContext(FilterContext)
+const GradientsList = ({ }) => {
+  
+  const { filter, gradientList, loading} = useContext(GradientContext)
 
 
   const list = gradientList.filter((el) => {

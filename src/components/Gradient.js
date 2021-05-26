@@ -3,10 +3,10 @@ import GradientPill from "./GradientPill"
 import GradientCode from "./GradientCode"
 import GradientTags from "./GradientTags"
 import { useContext } from "react"
-import { FilterContext } from "./../context/FilterContext"
+import { GradientContext } from "./../context/GradientContext"
 
 const Gradient = ({ colorStart, colorEnd, name, tags }) => {
-  const { filter } = useContext(FilterContext)
+  const { filter } = useContext(GradientContext)
 
   return (
     <li className="col-lg-3 col-md-4 col-sm-6">

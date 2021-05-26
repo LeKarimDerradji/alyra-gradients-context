@@ -26,11 +26,13 @@ const GradientsHeader = ({children }) => {
 
   
   const style = {
-    backgroundImage: `linear-gradient(to right, ${list[randomGradient].start}, ${list[randomGradient].end})`
-  }
+   backgroundImage: `linear-gradient(to right, ${list[randomGradient].start}, ${list[randomGradient].end})`
+ }
   return (
     <>
-    <header className="text-center bg-dark text-white py-5 mb-5" style={style}>
+    <header className="text-center bg-dark text-white py-5 mb-5" style={{
+      backgroundImage: `linear-gradient(to right, rgb(0,0,0), rgb(0,0,0)})`
+    }}>
       {children}
       <button
         aria-label="Clicker pour afficher le dégradé précédant"

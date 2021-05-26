@@ -1,8 +1,7 @@
 import Gradients from "./components/Gradients"
 import GradientsHeader from "./components/GradientsHeader"
 import Footer from "./components/Footer"
-import { FilterContextProvider } from "./context/FilterContext"
-import { GradientListContextProvider} from './context/GradientContext'
+import {GradientListContextProvider} from './context/GradientContext'
 
 function App() {
 
@@ -17,9 +16,10 @@ function App() {
       </GradientListContextProvider>
         <main className="container">
         <h1 className="text-center my-4">Alyra Gradients</h1>
-        <FilterContextProvider>
+
+        <GradientListContextProvider>
          <Gradients />
-        </FilterContextProvider>
+         </GradientListContextProvider>
       </main>
       <Footer />
     </div>

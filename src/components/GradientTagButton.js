@@ -1,9 +1,8 @@
 import React from "react"
 import { useContext } from "react"
-import { FilterContext } from "./../context/FilterContext"
-
+import { GradientContext } from "./../context/GradientContext"
 const GradientTagButton = ({ tag }) => {
-  const { filter, setFilter } = useContext(FilterContext)
+  const { filter, setFilter } = useContext(GradientContext)
   const className = filter === tag ? "bg-light" : "bg-dark text-white"
   return (
     <>

@@ -1,10 +1,14 @@
-import {useEffect, useReducer, createContext} from 'react'
+import {useEffect, useState, useReducer, createContext} from 'react'
 import {reducer} from './../reducer/reducer'
 
 export const GradientContext = createContext()
 
 
+
+
 export const GradientListContextProvider = ({ children }) => {
+    const [filter, setFilter] = useState("all")
+
     const initialState = {
       gradientList: [],
       loading: false,
@@ -38,7 +42,7 @@ export const GradientListContextProvider = ({ children }) => {
     const { gradientList, loading} = state;
     
     return (
-      <GradientContext.Provider value={{ gradientList, loading }}>
+      <GradientContext.Provider value={{ gradientList, loading, filter, setFilter }}>
         {children}
       </GradientContext.Provider>
     )
