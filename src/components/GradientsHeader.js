@@ -1,16 +1,17 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { ReactComponent as SvgToggle } from "bootstrap-icons/icons/arrow-clockwise.svg"
 import { ReactComponent as Next } from "bootstrap-icons/icons/arrow-right.svg"
 import { ReactComponent as Prev } from "bootstrap-icons/icons/arrow-left.svg"
+import {GradientContext} from './../context/GradientContext'
 
-const GradientsHeader = (props) => {
-
-  const { children, gradientList, loading} = props
-  const length = gradientList.length
+const GradientsHeader = ({children }) => {
+  const {gradientList, loading } = useContext(GradientContext)
+  const list = gradientList
+  const length = list.length
 
   const chooseGradient = () => Math.floor(Math.random() * length)
-
   const [randomGradient, setRandomGradient] = useState(chooseGradient)
+
   const handleReloadClick = () => {
     setRandomGradient(chooseGradient)
   }
@@ -21,10 +22,14 @@ const GradientsHeader = (props) => {
     setRandomGradient(randomGradient === 0 ? length - 1 : randomGradient - 1)
   }
 
+  
+
+  
   const style = {
-   backgroundImage: `linear-gradient(to right, ${gradientList[randomGradient].start}, ${gradientList[randomGradient].end})`
+    backgroundImage: `linear-gradient(to right, ${list[randomGradient].start}, ${list[randomGradient].end})`
   }
   return (
+    <>
     <header className="text-center bg-dark text-white py-5 mb-5" style={style}>
       {children}
       <button
@@ -52,6 +57,7 @@ const GradientsHeader = (props) => {
         <Next />
       </button>
     </header>
+    </>
   )
 }
 

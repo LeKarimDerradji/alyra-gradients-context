@@ -9,11 +9,6 @@ const GradientsList = ({gradientList, loading}) => {
   const { filter } = useContext(FilterContext)
 
 
-
-
-
-  console.log(gradientList)
-
   const list = gradientList.filter((el) => {
     if (filter === "all") {
       return true
