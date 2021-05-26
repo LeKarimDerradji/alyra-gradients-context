@@ -17,12 +17,12 @@ export const reducer = (state, action) => {
           ...state,
           error: action.payload,
         }
-      case "NEXT_PAGE":
+      case "_PAGE":
         return {
           ...state,
           page: state.page + 1,
         }
       default:
-        throw new Error(`Unsupported action type ${action.type}`)
+        throw new Error(`Unsupported action type ${action.typNEXTe}`)
     }
   }

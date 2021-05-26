@@ -4,9 +4,8 @@ import {reducer} from './../reducer/reducer'
 export const GradientContext = createContext()
 
 
-
-
 export const GradientListContextProvider = ({ children }) => {
+
     const [filter, setFilter] = useState("all")
 
     const initialState = {
@@ -16,13 +15,11 @@ export const GradientListContextProvider = ({ children }) => {
       page: 1,
       hasNext: null,
     }
-
-    
   
-    useEffect(() => {
-      dispatch({ type: "FETCH_INIT" });
+    useEffect(() => { 
       fetch(`https://gradients-api.herokuapp.com/gradients`)
         .then((response) => {
+          dispatch({ type: "FETCH_INIT" });
           if (!response.ok) {
             throw new Error(
               `Nous n'avons pas pu lire le registre des gradients, status : ${response.status}`
