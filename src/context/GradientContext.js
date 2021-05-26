@@ -16,6 +16,8 @@ export const GradientListContextProvider = ({ children }) => {
       page: 1,
       hasNext: null,
     }
+
+    
   
     useEffect(() => {
       dispatch({ type: "FETCH_INIT" });
@@ -37,7 +39,7 @@ export const GradientListContextProvider = ({ children }) => {
         });
     }, []);
   
-  
+
     const [state, dispatch] = useReducer(reducer, initialState)
     const { gradientList, loading} = state;
     

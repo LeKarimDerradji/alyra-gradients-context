@@ -25,9 +25,9 @@ const GradientsHeader = ({children }) => {
   
 
   
-  const style = {
-   backgroundImage: `linear-gradient(to right, ${list[randomGradient].start}, ${list[randomGradient].end})`
- }
+  //const style = {
+   //backgroundImage: `linear-gradient(to right, ${list[randomGradient].start}, ${list[randomGradient].end})`
+// }
   return (
     <>
     <header className="text-center bg-dark text-white py-5 mb-5" style={{

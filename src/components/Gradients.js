@@ -1,13 +1,13 @@
 import GradientsList from "./GradientsList"
 import GradientsSelect from "./GradientsSelect"
 
-const Gradients = ({gradientList, loading}) => {
-  
+const Gradients = ({}) => {
+
 
   return (
     <>
       <GradientsSelect/>
-      <GradientsList gradientList={gradientList} loading={loading}/>
+      <GradientsList />
     </>
   )
 }
