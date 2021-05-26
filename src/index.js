@@ -4,10 +4,14 @@ import "bootstrap/dist/css/bootstrap.css"
 import "./index.css"
 import App from "./App"
 import * as serviceWorker from "./serviceWorker"
+import {GradientListContextProvider} from './context/GradientContext'
+
 
 ReactDOM.render(
   <React.StrictMode>
+  <GradientListContextProvider>
     <App />
+  </GradientListContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 )

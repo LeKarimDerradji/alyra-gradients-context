@@ -14,6 +14,7 @@ import {
 } from "react-router-dom";
 
 const Gradient = ({ colorStart, colorEnd, name, tags }) => {
+  
   const { filter } = useContext(GradientContext)
 
 
