@@ -1,5 +1,13 @@
 # Alyra Gradients - Context API
 
+Teacher is Paulina aka Pehaa : https://pehaa.com/
+
+## What is asked : 
+
+- To take a React App with a lot of redundancy in it, and refractor it with React Hooks like : 
+- useContext
+- useReducer
+
 We often need data from the external world in react, that we usually fetch from a given API. 
 
 Usually, our API fetching can be quiet loud and heavy on the UI render. 
