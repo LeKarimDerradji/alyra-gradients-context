@@ -39,9 +39,29 @@ export const GradientListContextProvider = ({ children }) => {
 
     const [state, dispatch] = useReducer(reducer, initialState)
     const { gradientList, loading} = state;
-    
+     
+     function allTags(list) {
+  /* retourner la liste des tags uniques */
+  let listTotal = []
+  for (let element of list) {
+    if ("tags" in element) {
+      listTotal = listTotal.concat(element.tags)
+    }
+  }
+  const listTagsUnique = []
+  listTotal.forEach((el) => {
+    if (!listTagsUnique.includes(el)) {
+      //listTagsUnique = listTagsUnique.concat([el])
+      listTagsUnique.push(el)
+    }
+  })
+  return listTagsUnique
+}
+
+const tags = allTags(gradientList);
+
     return (
-      <GradientContext.Provider value={{ gradientList, loading, filter, setFilter }}>
+      <GradientContext.Provider value={{ gradientList, loading, filter, setFilter, tags }}>
         {children}
       </GradientContext.Provider>
     )
