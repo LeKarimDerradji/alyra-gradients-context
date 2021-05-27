@@ -4,7 +4,9 @@ We often need data from the external world in react, that we usually fetch from 
 
 Usually, our API fetching can be quiet loud and heavy on the UI render. 
 
-We can sanitize that, and perform a peaceful data-fetching, on a file separated from every components while having them available everywhere : 
+We can sanitize that, and perform a peaceful data-fetching, on a file separated from every components while having them available everywhere. 
+
+## useEffect && useReducer 
 
 ```javascript
 useEffect(() => { 
@@ -28,3 +30,6 @@ useEffect(() => {
     }, []);
 
 ```
+## Give me some Context :
+
+## Your eyes feels lighter and lighter 
