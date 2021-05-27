@@ -6,6 +6,10 @@ Usually, our API fetching can be quiet loud and heavy on the UI render.
 
 We can sanitize that, and perform a peaceful data-fetching, on a file separated from every components while having them available everywhere. 
 
+## App Structure Before : 
+
+## App Strcuture After : 
+
 ## useEffect && useReducer 
 
 ```javascript
