@@ -11,7 +11,7 @@ function App() {
       <Route exact path = '/'>
         <Home />
       </Route>
-      <Route exact path ='/gradient/:id'/>
+      <Route exact path ='gradient/:id'/>
         <FullSreen />
       <Route/>
     </Switch>

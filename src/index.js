@@ -2,9 +2,9 @@ import React from "react"
 import ReactDOM from "react-dom"
 import "bootstrap/dist/css/bootstrap.css"
 import "./index.css"
+import {GradientListContextProvider} from './context/GradientContext'
 import App from "./App"
 import * as serviceWorker from "./serviceWorker"
-import {GradientListContextProvider} from './context/GradientContext'
 import {BrowserRouter as Router} from 'react-router-dom'
 
 
