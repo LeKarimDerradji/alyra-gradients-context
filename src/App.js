@@ -11,9 +11,7 @@ function App() {
       <Route exact path = '/'>
         <Home />
       </Route>
-      <Route exact path ='gradient/:id'/>
-        <FullSreen />
-      <Route/>
+      <Route path="/gradient/:id" exact component={FullSreen} />
     </Switch>
   )
 }

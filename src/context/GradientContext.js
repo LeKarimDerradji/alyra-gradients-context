@@ -12,10 +12,7 @@ export const GradientListContextProvider = ({ children }) => {
       gradientList: [],
       loading: false,
       error: "",
-      page: 1,
-      hasNext: null,
     }
-    // Where is fetch init
     useEffect(() => { 
       fetch(`https://gradients-api.herokuapp.com/gradients`)
         .then((response) => {
