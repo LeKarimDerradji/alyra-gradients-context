@@ -29,7 +29,7 @@ const FullScreen = () => {
             style={{
               backgroundImage: `linear-gradient(to right, ${
                 list[gradientId -1]?.start
-              }, ${list[gradientId-1].end})`,
+              }, ${list[gradientId-1]?.end})`,
             }}
           >
             <nav className="fixed-top nav">
